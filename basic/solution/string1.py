@@ -45,7 +45,7 @@ def both_ends(s):
     # LAB(begin solution)
     if len(s) < 2:
         return ""
-    first2 = s[0:2]
+    first2 = s[:2]
     last2 = s[-2:]
     return first2 + last2
     # LAB(replace solution)

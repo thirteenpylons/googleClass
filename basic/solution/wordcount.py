@@ -52,17 +52,13 @@ def word_count_dict(filename):
     """Returns a word/count dict for this filename."""
     # Utility used by count() and Topcount().
     word_count = {}  # Map each word to its count
-    input_file = open(filename, "r")
-    for line in input_file:
-        words = line.split()
-        for word in words:
-            word = word.lower()
-            # Special case if we're seeing this word for the first time.
-            if not word in word_count:
-                word_count[word] = 1
-            else:
-                word_count[word] = word_count[word] + 1
-    input_file.close()  # Not strictly required, but good form.
+    with open(filename, "r") as input_file:
+        for line in input_file:
+            words = line.split()
+            for word in words:
+                word = word.lower()
+                            # Special case if we're seeing this word for the first time.
+                word_count[word] = 1 if word not in word_count else word_count[word] + 1
     return word_count
 
 
