@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # remove the HTML
-**.html
+*/*.html
