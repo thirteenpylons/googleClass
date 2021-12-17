@@ -16,9 +16,9 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-  # +++your code here+++
-  return
-
+  if len(s) >= 3:
+     s = s[:-3] + "ly" if s[-3:] == "ing" else s + "ing"
+  return s
 
 # E. not_bad
 # Given a string, find the first appearance of the
