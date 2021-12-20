@@ -50,13 +50,12 @@ def mimic_dict(filename):
     # +++your code here+++
     # LAB(begin solution)
     mimic_dict = {}
-    f = open(filename, "r")
-    text = f.read()
-    f.close()
+    with open(filename, "r") as f:
+        text = f.read()
     words = text.split()
     prev = ""
     for word in words:
-        if not prev in mimic_dict:
+        if prev not in mimic_dict:
             mimic_dict[prev] = [word]
         else:
             mimic_dict[prev].append(word)

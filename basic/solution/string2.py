@@ -19,10 +19,7 @@ def verbing(s):
     # +++your code here+++
     # LAB(begin solution)
     if len(s) >= 3:
-        if s[-3:] != "ing":
-            s = s + "ing"
-        else:
-            s = s + "ly"
+        s = s + "ing" if s[-3:] != "ing" else s + "ly"
     return s
     # LAB(replace solution)
     # return

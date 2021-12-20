@@ -17,7 +17,7 @@ def remove_adjacent(nums):
     # LAB(begin solution)
     result = []
     for num in nums:
-        if len(result) == 0 or num != result[-1]:
+        if not result or num != result[-1]:
             result.append(num)
     return result
     # LAB(replace solution)
